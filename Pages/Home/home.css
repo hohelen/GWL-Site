@@ -21,24 +21,23 @@ header {
     justify-content: space-between;
     align-items: center;
     transition: 0.6s;
-    padding: 40px 100px;
+    padding: 15px 40px;
+    background: #fff;
     z-index: 100000;
 }
 
-header.sticky {
-    padding: 5px 100px;
-    background: #fff;
-}
+/*header.sticky {*/
+/*    padding: 15px 40px;*/
+/*    background: #fff;*/
+/*}*/
 
 header .logo {
     position: relative;
-    font-weight: 700;
-    color: #fff;
-    text-decoration: none;
-    font-size: 2em;
-    text-transform: uppercase;
-    letter-spacing: 2px;
     transition: 0.6s;
+}
+
+.logo img {
+    width: 100px;
 }
 
 header ul {
@@ -57,7 +56,7 @@ header ul li a {
     position: relative;
     margin: 0 15px;
     text-decoration: none;
-    color: #fff;
+    color: #000;
     letter-spacing: 2px;
     font-weight: 500;
     transition: 0.6s;
@@ -71,8 +70,31 @@ header ul li a {
     background-size: cover;
 }
 
-header.sticky .logo,
-header.sticky ul li a {
-    color: #000;
+/*header.sticky .logo,*/
+/*header.sticky ul li a {*/
+/*    color: #000;*/
+/*}*/
 
+.login-button {
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-left: 20px;
+    background-color: #3048C0;
+    color: #ffffff;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 2px;
+    transition: 0.3s;
 }
+
+.login-button:hover {
+    background-color: #4556AB;
+    cursor: pointer;
+}
+
+.login-button:active {
+    background-color: #273B9C;
+    cursor: pointer;
+}
+
