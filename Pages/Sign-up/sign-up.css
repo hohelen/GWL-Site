@@ -1,0 +1,46 @@
+html, body {
+    overflow: hidden;
+}
+.sign-up-container{
+    margin-top:90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title{
+    margin-bottom: 10px;
+}
+
+.inner-sign-up-container{
+    border-style: solid;
+    border-width: thin;
+    border-radius: 2%;
+    margin: 50px;
+    padding: 90px 150px 80px 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Form Box CSS */
+form input{
+    padding: 10px;
+    margin: 10px;
+    width: 90%
+}
+
+form button {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+}
+
+form select {
+    padding: 10px;
+    margin: 10px;
+    width: 90%
+}
