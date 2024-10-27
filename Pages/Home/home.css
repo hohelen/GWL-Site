@@ -28,14 +28,16 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 500px;
+    height: 450px;
 }
 
 .info-header {
-    font-size: 40px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     color: #1A2769;
+    font-style: normal;
+    font-size: 50px;
+    letter-spacing: 3px;
 }
 
 .homepage-inner-container {
@@ -48,6 +50,7 @@
     width: 500px;
     height: auto;
     margin-right: 20px;
+    margin-left: 20px;
 }
 
 .intro-text {
@@ -55,5 +58,65 @@
     text-align: left;
     font-size: 20px;
     margin-right: 20px;
+    margin-left: 20px;
 }
 
+.intro-text p {
+    margin-top: 10px;
+}
+
+.achievements-container {
+    position: relative;
+    width: 100%;
+    height: 450px;
+}
+
+.achievements-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.25);
+}
+
+.achievements-inner-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 20px;
+    font-style: italic;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: right;
+}
+
+.achievements-inner-container p {
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.achievements-title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    padding-bottom: 15px;
+    letter-spacing: 3px;
+    margin-bottom: 1000px;
+}
+
+.practice-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 700px;
+}
+
+.practice-img {
+    width: 500px;
+    height: auto;
+}
