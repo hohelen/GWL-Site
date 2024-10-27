@@ -1,0 +1,26 @@
+footer {
+    height: 60px;
+    background-color: #1A2769;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 15px;
+    text-decoration: none;
+    color: #FFF;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+.footer-img {
+    height: 60px;
+    transform: translateY(+3px);
+}
