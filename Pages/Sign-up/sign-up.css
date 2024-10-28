@@ -1,4 +1,10 @@
+/*  Fix this CSS issue: Unnecessary presence of scroll bar for whole page beyond the sign-up-container.
+    html{
+    overflow: hidden;
+} */
+
 .sign-up-container{
+    border-style: solid;
     margin-top:90px;
     display: flex;
     flex-direction: column;
