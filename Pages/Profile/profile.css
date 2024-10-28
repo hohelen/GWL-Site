@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: auto;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.page-title-container {
+    position: relative;
+    flex: 0 1 auto;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.profile-bg {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    filter: brightness(0.4);
+}
+
+.profile-text {
+    position: absolute;
+    font-family: "Futura";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: clamp(2vw, 5vw, 8vw);
+    white-space: nowrap;
+    max-width: 90%;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+        text-shadow:
+        0 0 5px rgba(255, 255, 255, 0.2),
+        0 0 10px rgba(255, 255, 255, 0.2),
+        0 0 15px rgba(255, 255, 255, 0.2),
+        0 0 20px rgba(0, 153, 255, 0.2),
+        0 0 30px rgba(0, 153, 255, 0.2),
+        0 0 40px rgba(0, 153, 255, 0.2);
+}
+
+#footer-container {
+    height: 60px;
+    background-color: #f1f1f1;
+    flex-shrink: 0;
+}
