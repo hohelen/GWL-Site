@@ -15,7 +15,7 @@
     <div class ="login-container">
         <div class="inner-login-container">
             <h1 class="title">Login</h1>
-            <form>
+            <form action ="login.php" method="post" >
                 <div>
                     <input type="text" name="username" id="username-input" placeholder="Username">
                 </div>
@@ -24,7 +24,7 @@
                 </div>
                 <button type="submit">Sign In</button>
             </form>
-            <p class="new-text">New to Gator Weightlifting? <a href="../Sign-up/sign-up.html">Sign Up</a></p>
+            <p class="new-text">New to Gator Weightlifting? <a href="../Sign-up/sign-up-page.php">Sign Up</a></p>
         </div>
     </div>
     <div id="footer-container"></div>

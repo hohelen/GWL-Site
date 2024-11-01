@@ -1,3 +1,8 @@
+<?php
+    session_start(); 
+    $name = isset($_SESSION['name']) ? $_SESSION['name'] : 'Guest';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +17,7 @@
     <div id="header-container"></div>
     <div class="page-title-container">
         <img class="profile-bg" src="../../Components/Assets/ark2.png">
-        <p class="profile-text">HELLO MEI</p>
+        <p class="profile-text">HELLO <?php echo htmlspecialchars(strtoupper($name)); ?></p>
     </div>
     <div id="footer-container"></div>
     <script src="../Header/header.js"></script>
