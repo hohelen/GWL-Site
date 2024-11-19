@@ -1,9 +1,22 @@
 #calendar {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 20px;
     background-color: #f4f4f4;
     border: 1px solid #ddd;
     border-radius: 10px;
   }
-  
+.modal {
+    z-index: 1050; /* Default value for Bootstrap modals */
+}
+.modal-backdrop {
+    z-index: 1040; /* Default value for the backdrop */
+}
+.fc-toolbar, .fc-header-toolbar {
+    z-index: 1030; /* Lower than the modal's z-index */
+}
+.modal-dialog {
+    display: flex;
+    align-items: center;
+    min-height: calc(100% - 1rem);
+}
