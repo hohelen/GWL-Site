@@ -1,16 +1,19 @@
 #calendar {
-    max-width: 1100px;
-    margin: 0 auto;
+    max-width: 1000px;
+    margin: 10 auto;
     padding: 20px;
     background-color: #f4f4f4;
     border: 1px solid #ddd;
     border-radius: 10px;
+    max-height: 1000px;
   }
-.modal {
-    z-index: 1050; /* Default value for Bootstrap modals */
+
+.custom-modal .modal {
+    z-index: 1060; /* Ensure this is higher than the header z-index */
 }
-.modal-backdrop {
-    z-index: 1040; /* Default value for the backdrop */
+  
+.custom-modal .modal-backdrop {
+    z-index: 1050; /* Ensure this is lower than the modal but high enough to cover content */
 }
 .fc-toolbar, .fc-header-toolbar {
     z-index: 1030; /* Lower than the modal's z-index */
