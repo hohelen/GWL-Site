@@ -1,45 +1,41 @@
-document.addEventListener("DOMContentLoaded", function () {
-    var calendarEl = document.getElementById("calendar");
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: "dayGridMonth",
-      headerToolbar: {
-        center: 'addEventButton'
-      },
-      customButtons: {
-        addEventButton: {
-          text: 'Add Event...',
-          click: function() {
-            var title = prompt('Enter the event title');
-            if (title) {
-              var dateStr = prompt('Enter a date in YYYY-MM-DD format');
-              if (dateStr) {
-                var timeStr = prompt('Enter a time in HH:MM format (24-hour clock)');
-                if (timeStr) {
-                  var dateTimeStr = dateStr + 'T' + timeStr + ':00'; // combine date and time
-                  var date = new Date(dateTimeStr); // will be in local time
+$(document).ready(function () {
+  $('#calendar').fullCalendar({
+    selectable: true,
+    selectHelper: true,
+    select: function(start, end) {
+      $('#createEventModal').modal('toggle');
+      $('#eventForm input[name=start_date]').val(moment(start).format('YYYY-MM-DD'));
+      $('#eventForm input[name=end_date]').val(moment(end).format('YYYY-MM-DD'));
+    },
+    header: {
+      left: 'month, agendaWeek, agendaDay, list',
+      center: 'title',
+      right: 'prev, today, next'
+    },
+    buttonText: {
+      today: 'Today',
+      month: 'Month',
+      week: 'Week',
+      day: 'Day',
+      list: 'List'
+    }
+  });
 
-                  if (!isNaN(date.valueOf())) { // valid?
-                    calendar.addEvent({
-                      title: title,
-                      start: date,
-                      allDay: false
-                    });
-                    alert('Great. The event has been added to the calendar.');
-                  } else {
-                    alert('Invalid date/time.');
-                  }
-                } else {
-                  alert('Event time is required.');
-                }
-              } else {
-                alert('Event date is required.');
-              }
-            } else {
-              alert('Event title is required.');
-            }
-          }
-        }
+  // Prevent form submission default action and close modal
+  $('#eventForm').on('submit', function(event) {
+    event.preventDefault();
+    $.ajax({
+      url: 'save_event.php',
+      method: 'POST',
+      data: $(this).serialize(),
+      success: function(response) {
+        // On success, close the modal, update the calendar
+        $('#createEventModal').modal('toggle');
+        $('#calendar').fullCalendar('refetchEvents');
+      },
+      error: function(xhr, status, error) {
+        console.error('An error occurred:', error);
       }
     });
-    calendar.render();
+  });
 });
