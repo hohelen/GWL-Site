@@ -12,10 +12,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" href="../E-board/events.css">
-  <link rel="stylesheet" href="../../Components/Overall/overall.css">
+  <link rel="stylesheet" href="../Events/events-coach.css">
   <link rel="stylesheet" href="../Header/header.css">
   <link rel="stylesheet" href="../Footer/footer.css">
+  <link rel="stylesheet" href="../../Components/Overall/overall.css">
 </head>
 
 <body>
@@ -25,7 +25,36 @@
   </div>
   <div class="container">
     <div id="calendar"></div>
-    <br>
+    <div class="coach-view-container">
+      <p class="workout-assignment-title">Workout Assignment</p>
+      <div class="member-name-container">
+        <p class="input-titles">Member Name</p>
+        <div class="dropdown">
+          <div class="select">
+            <span class="selected">Helen Ho</span>
+            <div class="caret"></div>
+          </div>
+          <ul class="menu">
+            <li class="active">Helen Ho</li>
+            <li>Tina Mei</li>
+            <li>Mei Li</li>
+          </ul>
+        </div>
+      </div>
+      <div class="date-container">
+        <p class="input-titles">Date</p>
+        <input type="date" class="date-input" required/>
+      </div>
+      <div class="workout-container">
+        <p class="input-titles">Workout</p>
+        <textarea class="workout-input" placeholder="Type workout here..." required></textarea>
+      </div>
+      <div class="button-container">
+        <button class="assign-button">
+          Assign Workout
+        </button>
+      </div>
+    </div>
   </div>
   <!-- Create Event Modal -->
   <div id="createEventModal" class="modal fade" tabindex="-1" role="dialog">
@@ -71,12 +100,12 @@
       </div>
     </div>
   </div>
-  
   <!-- Other HTML elements -->
   <div id="footer-container"></div>
   <script src="../Header/header.js" defer></script>
   <script src="../Footer/footer.js" defer></script>
   <script src="../Events/calendar.js" defer></script>
+  <script src="../Events/events-coach.js" defer></script>
 </body>
 
 </html>

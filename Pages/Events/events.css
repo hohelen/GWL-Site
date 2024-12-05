@@ -6,12 +6,12 @@
     border: 1px solid #ddd;
     border-radius: 10px;
     max-height: 1000px;
-  }
+}
 
 .custom-modal .modal {
     z-index: 1060; /* Ensure this is higher than the header z-index */
 }
-  
+
 .custom-modal .modal-backdrop {
     z-index: 1050; /* Ensure this is lower than the modal but high enough to cover content */
 }
