@@ -1,36 +1,4 @@
-<!-- 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-include('connection.php');
-session_start();
 
-if (!isset($_SESSION['username'])) {
-    $_SESSION['username'] = 'tmei'; // Default user ID
-}
-
-if (isset($_POST['coach-save-event'])) {
-    $username = $_POST['username']; // assuming you have the userID stored in a session variable
-    $title = 'Practice';
-    $start_date = $_POST['start_date'];
-    $end_date = $_POST['end_date'];
-    $start_time = $_POST['start_time'];
-    $end_time = $_POST['end_time'];
-    $details = $_POST['details'];
-    // Prepare SQL according to whether time fields are provided
-    $stmt = $connection->prepare("INSERT INTO events (username, title, start_date, start_time, end_date, end_time, details) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssssss",$username, $title, $start_date, $start_time, $end_date, $end_time, $details);
-    // Execute query and check for success
-    if ($stmt->execute()) {
-        header('Location: coach-events.php');
-        exit();
-    } else {
-        $msg = "Event not created";
-    }
-
-    // Close the statement
-    $stmt->close();
-}
-?> -->
 <!-- <?php
 // Enable error reporting for debugging
 error_reporting(E_ALL);

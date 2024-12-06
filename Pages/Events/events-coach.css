@@ -26,11 +26,12 @@
 }
 
 .container {
-    width: 2000px;
+    width: 80%;
     display: flex;
     gap: 100px;
     padding-bottom: 100px;
-    height: 1075px;
+    height: auto;
+    margin-top: 75px;
 }
 
 .coach-view-container {
@@ -96,6 +97,7 @@
     padding: 1em;
     cursor: pointer;
     transition: background 0.3s;
+    font-weight: 500;
 }
 
 .select-clicked {
@@ -173,6 +175,7 @@
     padding: 1em;
     cursor: pointer;
     transition: 0.3s;
+    font-weight: 500;
 }
 
 .date-input:hover {
@@ -190,6 +193,7 @@
     padding: 1em;
     cursor: pointer;
     transition: 0.3s;
+    font-weight: 500;
 }
 
 .workout-input:hover {
