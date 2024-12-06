@@ -20,6 +20,7 @@
 }
 .modal-dialog {
     display: flex;
+    width: 2000px;
     align-items: center;
     min-height: calc(100% - 1rem);
 }

@@ -3,7 +3,7 @@ include('connection.php');
 session_start();
 
 if (!isset($_SESSION['username'])) {
-    $_SESSION['username'] = 'tmei'; // Default user ID
+    $_SESSION['username'] = 'guest'; // Default user ID
 }
 
 if (isset($_POST['save-event'])) {
@@ -18,12 +18,16 @@ if (isset($_POST['save-event'])) {
     $stmt->bind_param("sssssss",$username, $title, $start_date, $start_time, $end_date, $end_time, $details);
     // Execute query and check for success
     if ($stmt->execute()) {
-        header('Location: events.php');
+        if ($username = 'tmei') {
+            header('Location: events-coach.php');
+        }
+        else{
+            header('Location: events.php');
+        }
         exit();
     } else {
         $msg = "Event not created";
     }
-
     // Close statement
     $stmt->close();
 }

@@ -10,7 +10,7 @@ ini_set('log_errors', 'error_log.txt');
 error_reporting(E_ALL);
 
 if (!isset($_SESSION['username'])) {
-    $_SESSION['username'] = 'tmei'; // Default user ID
+    $_SESSION['username'] = 'hohelen'; // Default user ID
     $query = "SELECT 
                 title, 
                 start_date, 

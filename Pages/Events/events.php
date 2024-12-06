@@ -1,13 +1,6 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-include('connection.php');
 session_start();
-
-if (!isset($_SESSION['username'])) {
-    $_SESSION['username'] = 'tmei'; // Default user ID
-}
+$username = isset($_SESSION['username']) ? $_SESSION['username'] : 'guest';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +32,7 @@ if (!isset($_SESSION['username'])) {
 <!-- JavaScript -->
 <script>
   $(document).ready(function() {
-    var username = "<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'tmei'; ?>"; // Default to 'tmei' if not set
+    var username = "<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'guest'; ?>"; // Default to 'tmei' if not set
     console.log("Username:", username);
     if (username === '') {
           console.error("User ID is not set in PHP session");
@@ -73,8 +66,8 @@ if (!isset($_SESSION['username'])) {
             }
         },
         eventClick: function(event) {
-            if (event.description) {
-                alert(event.description);
+            if (event.details) {
+              alert("Event Details: " + event.details);
             }
         }
     });
