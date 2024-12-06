@@ -8,6 +8,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: #F9F8F0;
 }
 
 .sign-up-container{
@@ -58,4 +59,21 @@ form select {
 
 .new-text a {
     cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+#usertype-input {
+    cursor: pointer;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+input {
+    border-width: 1px;
+    border-radius: 5px;
 }

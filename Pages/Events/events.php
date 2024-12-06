@@ -12,10 +12,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" href="../E-board/events.css">
   <link rel="stylesheet" href="../../Components/Overall/overall.css">
   <link rel="stylesheet" href="../Header/header.css">
   <link rel="stylesheet" href="../Footer/footer.css">
+  <link rel="stylesheet" href="../E-board/events.css">
 </head>
 
 <body>

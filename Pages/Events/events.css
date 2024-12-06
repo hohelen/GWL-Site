@@ -2,7 +2,7 @@
     max-width: 1000px;
     margin: 10 auto;
     padding: 20px;
-    background-color: #F9F8F0;
+    background-color: #f4f4f4;
     border: 1px solid #ddd;
     border-radius: 10px;
     max-height: 1000px;
@@ -23,3 +23,4 @@
     align-items: center;
     min-height: calc(100% - 1rem);
 }
+
