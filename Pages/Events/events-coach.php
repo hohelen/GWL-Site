@@ -39,7 +39,7 @@ $userResult = $connection->query($userQuery);
 </script>
 <body>
   <div id="header-container"></div> 
-   <div class="page-title-container">
+    <div class="page-title-container">
     <h1>Calendar</h1>
   </div>
   <div class="container">
