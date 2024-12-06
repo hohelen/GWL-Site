@@ -1,8 +1,8 @@
 <?php
-        session_start();
+    session_start(); // Move session_start() to the top
 
     error_reporting(E_ALL);
-    ini_set('display_errors', 1);
+    ini_set('[REDACTED]', 1);
 
     $db_server = "localhost";
     $db_user = "root";
@@ -19,19 +19,21 @@
     $password = $_POST['password'];
 
     // check if username and password match
-    $stmt = $conn->prepare("SELECT firstname FROM users WHERE username = ? AND password = ?");
+    $stmt = $conn->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
     $stmt->bind_param("ss", $username, $password);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        $firstname = $row['firstname'];
-        $username = $row['username'];
 
-        session_start();
-        $_SESSION['name'] = $firstname;
-        $_SESSION['username'] = $username;
+        $_SESSION['firstname'] = $row['firstName'];
+        $_SESSION['lastname'] = $row['lastName'];
+        $_SESSION['usertype'] = $row['userType'];
+        $_SESSION['email'] = $row['email'];
+        $_SESSION['username'] = $row['username'];
+        $_SESSION['password'] = $row['password']; // consider storing a hashed password instead of plain text
+
         header("Location: ../Profile/Profile.php");        
         exit();
     }
@@ -41,6 +43,5 @@
     }
     
     $stmt->close();
-    //$conn->close();
-
+    $conn->close();
 ?>
