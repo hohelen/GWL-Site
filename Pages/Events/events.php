@@ -78,5 +78,4 @@
   <script src="../Footer/footer.js" defer></script>
   <script src="../Events/calendar.js" defer></script>
 </body>
-
 </html>
