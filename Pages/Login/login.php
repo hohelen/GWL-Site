@@ -1,4 +1,6 @@
 <?php
+        session_start();
+
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 
@@ -25,10 +27,11 @@
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $firstname = $row['firstname'];
+        $username = $row['username'];
 
         session_start();
         $_SESSION['name'] = $firstname;
-        // Redirect if email or username is already in use
+        $_SESSION['username'] = $username;
         header("Location: ../Profile/Profile.php");        
         exit();
     }
@@ -38,6 +41,6 @@
     }
     
     $stmt->close();
-    $conn->close();
+    //$conn->close();
 
 ?>
