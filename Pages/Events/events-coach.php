@@ -35,7 +35,7 @@ $userResult = $connection->query($userQuery);
 
 <body>
   <div id="header-container"></div> 
-   <div class="page-title-container">
+    <div class="page-title-container">
     <h1>Calendar</h1>
   </div>
   <div class="container">

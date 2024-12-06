@@ -15,10 +15,8 @@
 </head>
 <body>
     <div id="header-container"></div>
-    <div class="page-title-container">
-        <img class="profile-bg" src="../../Components/Assets/ark2.png">
-        <p class="profile-text">HELLO <?php echo htmlspecialchars(strtoupper($name)); ?></p>
-    </div>
+    <img class="profile-bg" src="../../Components/Assets/ark2.png">
+    <p class="profile-text">HELLO <?php echo htmlspecialchars(strtoupper($name)); ?></p>
     <div id="footer-container"></div>
     <script src="../Header/header.js"></script>
     <script src="../Footer/footer.js"></script>
