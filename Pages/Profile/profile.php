@@ -19,10 +19,8 @@ session_start();
 </script>
 <body>
     <div id="header-container"></div>
-    <div class="page-title-container">
-        <img class="profile-bg" src="../../Components/Assets/ark2.png">
-        <p class="profile-text">HELLO <?php echo htmlspecialchars(strtoupper($_SESSION['firstname'])); ?></p>
-    </div>
+    <img class="profile-bg" src="../../Components/Assets/ark2.png">
+    <p class="profile-text">HELLO <?php echo htmlspecialchars(strtoupper($_SESSION['firstname'])); ?></p>
     <div id="footer-container"></div>
     <script src="../Footer/footer.js"></script>
     <script>
