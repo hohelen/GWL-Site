@@ -1,22 +1,34 @@
 <?php
-include('../Login/login.php');  // Include your database connection
+include('connection.php');
+session_start();
 
-if (isset($_POST['title']) && isset($_POST['start_date']) && isset($_POST['start_time']) && isset($_POST['end_date']) && isset($_POST['end_time'])) {
+if (!isset($_SESSION['username'])) {
+    $_SESSION['username'] = 'guest'; // Default user ID
+}
+
+if (isset($_POST['save-event'])) {
+    $username = $_SESSION['username']; // assuming you have the userID stored in a session variable
     $title = $_POST['title'];
     $start_date = $_POST['start_date'];
-    $start_time = $_POST['start_time'];
     $end_date = $_POST['end_date'];
+    $start_time = $_POST['start_time'];
     $end_time = $_POST['end_time'];
-    $description = $_POST['description'];
-
-    $query = "INSERT INTO tbl_event (title, start_date, start_time, end_date, end_time, description) VALUES ('$title', '$start_date', '$start_time', '$end_date', '$end_time', '$description')";
-    if (mysqli_query($connection, $query)) {  // Assuming $connection is your database connection variable
-        echo "Event created successfully";
+    $details = $_POST['details'];
+    $stmt = $connection->prepare("INSERT INTO events (username, title, start_date, start_time, end_date, end_time, details) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssss",$username, $title, $start_date, $start_time, $end_date, $end_time, $details);
+    // Execute query and check for success
+    if ($stmt->execute()) {
+        if ($username = 'tmei') {
+            header('Location: events-coach.php');
+        }
+        else{
+            header('Location: events.php');
+        }
+        exit();
     } else {
-        echo "Error: " . $query . "<br>" . mysqli_error($connection);
+        $msg = "Event not created";
     }
-} else {
-    echo "Invalid input";
+    // Close statement
+    $stmt->close();
 }
-mysqli_close($connection);
 ?>
